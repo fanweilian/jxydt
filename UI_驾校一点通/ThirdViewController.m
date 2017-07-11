@@ -9,7 +9,8 @@
 #import "ThirdViewController.h"
 #import "RootDataManager.h"
 #import "ThirdDataModel.h"
-#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define WIDTH    [UIScreen mainScreen].bounds.size.width
+#define HEIGHT   [UIScreen mainScreen].bounds.size.height
 @interface ThirdViewController ()<UIAlertViewDelegate>
 {
 
@@ -103,7 +104,7 @@
     _answerString=model.manswer;
     self.mdesc.text=model.mdesc;
     if (model.mimage!=nil) {
-        _imageView=[[UIImageView alloc]initWithFrame:CGRectMake(100,frame.origin.y+frame.size.height+40, 120, 100)];
+        _imageView=[[UIImageView alloc]initWithFrame:CGRectMake((WIDTH - 140)/2,frame.origin.y+frame.size.height+40, 140, 120)];
         NSString *imageGif=model.mimage;
         NSArray *image=[imageGif componentsSeparatedByString:@".gif"];
         NSString *imageName=image[0];
